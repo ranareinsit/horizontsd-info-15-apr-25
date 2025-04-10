@@ -21,15 +21,11 @@
     "@mui/material-nextjs": "latest",
     "@mui/system": "7.0.0",
     "@mui/utils": "7.0.0",
-    "@mui/x-charts": "^7.28.0",
-    "eslint": "latest",
-    "eslint-config-next": "^15.0.0",
     "i18next": "^24.2.3",
     "i18next-resources-to-backend": "^1.2.1",
     "js-cookie": "^3.0.5",
     "negotiator": "^1.0.0",
     "next": "^15.0.0",
-    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
@@ -41,6 +37,9 @@
     "@types/node": "22.13.14",
     "@types/prop-types": "^15",
     "@types/react": "19.0.12",
+    "eslint": "latest",
+    "eslint-config-next": "^15.0.0",
+    "prop-types": "^15.8.1",
     "typescript": "5.8.2"
   }
 }

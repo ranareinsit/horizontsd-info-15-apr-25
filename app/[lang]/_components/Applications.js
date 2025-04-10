@@ -8,9 +8,8 @@ import {
     CardActions
 } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './swiper.css'
@@ -24,8 +23,9 @@ function Desktop() {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode == 'dark'
-    const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
-    const backgroundColor2 = isDark ? theme.palette.primary.main : theme.palette.secondary.contrastText
+    const backgroundColor = isDark ? theme.palette.primary.background : theme.palette.secondary.light
+    const backgroundColor2 = isDark ? theme.palette.primary.main : theme.palette.primary.light
+    const hoverBackground = isDark ? theme.palette.secondary.dark : theme.palette.primary.main
     const { dict } = useI18n()
     const dictionary = dict.Home.Applications
     const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
@@ -50,36 +50,36 @@ function Desktop() {
                     width: `100%`
                 }}
             >
-                <div>
+                <Stack direction={"column"}>
                     <Box
                         sx={{
                             display: 'flex',
                             flexDirection: 'row',
                             justifyContent: `space-between`,
                             alignItems: `center`,
-                            height: '20%',
                             margin: `0 0 1rem 0`,
-                            width: `100%`
+                            width: `100%`,
                         }}
                     >
                         {dictionary.Content.map(({ button: item }, index) => (
                             <Box
                                 key={index}
-                                component={Button}
                                 onClick={() => handleItemClick(index)}
                                 sx={[
                                     () => ({
+                                        cursor: `pointer`,
+                                        borderRadius: `0.3rem`,
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: `start`,
                                         alignItems: `center`,
                                         padding: 2,
-                                        height: '20vh',
+                                        height: '10rem',
                                         backgroundColor: backgroundColor,
                                         width: 'auto',
                                         marginLeft: index == 0 ? 0 : `1rem`,
                                         '&:hover': {
-                                            backgroundColor: backgroundColor2,
+                                            backgroundColor: hoverBackground,
                                         },
                                     }),
                                     selectedItemIndex === index && {
@@ -112,8 +112,7 @@ function Desktop() {
                             </Box>
                         ))}
                     </Box>
-
-                </div>
+                </Stack>
                 <Box sx={{
                     display: 'flex',
                     width: '100%',
@@ -122,7 +121,7 @@ function Desktop() {
                 }}>
                     <Card variant="outlined" sx={{
                         width: `100%`,
-                        height: `30vh`
+                        height: `100%`
                     }}>
                         <Box sx={{
                             position: `relative`,
@@ -130,7 +129,7 @@ function Desktop() {
                             left: `0`,
                             width: `100%`,
                             height: `30vh`,
-                            background: `linear-gradient(180deg, ${backgroundColor}, transparent), url(/images/background-1.webp)`,
+                            background: `linear-gradient(180deg, ${backgroundColor}, transparent), url(/images/background-${selectedItemIndex + 1}.webp)`,
                             backgroundPosition: `70% 30%`,
                             zIndex: 3
                         }} >
@@ -180,7 +179,7 @@ function Mobile() {
             <Swiper
                 spaceBetween={10}
                 loop={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Pagination, Navigation]}
                 pagination={{
                     clickable: true,
                 }}

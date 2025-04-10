@@ -3,11 +3,11 @@ import { useI18n } from '../../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import {
-    Card, CardContent, Box, Container, Typography, useMediaQuery, Grid, Link, Button, Stack} from '@mui/material'
+    Card, CardContent, Box, Container, Typography, useMediaQuery, Grid, Link, Button, Stack
+} from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
@@ -15,6 +15,8 @@ import './swiper.css'
 import SectionHeader from "./SectionHeader"
 import Section from "./Section"
 import LabelIcon from '@mui/icons-material/Label';
+
+import ScrollGrow from './ScrollGrow';
 
 function SliderMobile() {
     const theme = useTheme();
@@ -29,7 +31,6 @@ function SliderMobile() {
         >
             <Swiper
                 spaceBetween={10}
-                centeredSlides={true}
                 pagination={{
                     clickable: true,
                 }}
@@ -37,11 +38,12 @@ function SliderMobile() {
                     enabled: true
                 }}
                 loop={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Pagination, Navigation]}
                 className="swiper-slider"
                 style={{
                     display: "flex",
                     justifyContent: "center",
+                    alignItems: "center",
                     backgroundPosition: `center`,
                     backgroundSize: `cover`,
                     width: `100%`,
@@ -90,40 +92,50 @@ function Desktop() {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode == 'dark'
-    const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
+    const backgroundColor = isDark ? theme.palette.primary.background : theme.palette.secondary.light
+    const backgroundColor2 = isDark ? theme.palette.secondary.background : theme.palette.secondary.contrastText
     const { dict } = useI18n()
     const content = dict.Home.Capabilities.Content
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
     return (
-        <Grid container padding={2}>
+        <Grid container spacing={2} sx={{ maxWidth: `1480px` }}>
             {content.map((item, index) => (
-                <Grid size={6} key={index} padding={2}>
-                    <Stack
-                        direction="column"
-                        component={Card}
-                        useFlexGap
-                        sx={{
-                            color: 'inherit',
-                            p: 3,
-                            height: `100%`,
-                            background: backgroundColor
-                        }}
+                <Grid size={6} key={index} spacing={2}>
+                    <ScrollGrow
+                        animationDelay={500}
+                        threshold={0.01}
+                        timeout={(500 * index) + 500}
+                        transformOrigin="0 0 0"
                     >
-                        <div>
-                            <Stack direction={"row"} alignItems={"center"}>
-                                <LabelIcon sx={{ marginRight: `1rem` }} />
-                                <Typography variant="button" component="div" >
-                                    {item.title}
-                                </Typography>
-                            </Stack>
-                            {item.description.map((e, i) => {
-                                return (
-                                    <Typography key={i} variant="body2" gutterBottom >
-                                        {e}
+                        <Stack
+                            direction="column"
+                            component={Card}
+                            useFlexGap
+                            sx={{
+                                color: 'inherit',
+                                p: 3,
+                                height: isMobile ? `unset` : `30vh`,
+                                background: `linear-gradient(45deg, ${backgroundColor}, ${backgroundColor2})`
+                            }}
+                        >
+                            <div>
+                                <Stack direction={"row"} alignItems={"center"}>
+                                    <LabelIcon sx={{ marginRight: `1rem` }} />
+                                    <Typography variant="button" component="div" >
+                                        {item.title}
                                     </Typography>
-                                )
-                            })}
-                        </div>
-                    </Stack>
+                                </Stack>
+                                {item.description.map((e, i) => {
+                                    return (
+                                        <Typography key={i} variant="body2" gutterBottom >
+                                            {e}
+                                        </Typography>
+                                    )
+                                })}
+                            </div>
+                        </Stack>
+                    </ScrollGrow>
                 </Grid>
             ))}
         </Grid>
@@ -141,7 +153,7 @@ function Footer() {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode == 'dark'
-    const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
+    const backgroundColor = isDark ? theme.palette.primary.background : theme.palette.secondary.light
     const { dict } = useI18n()
     const content = dict.Home.Capabilities.Footer
     return (

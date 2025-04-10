@@ -48,7 +48,7 @@ function PageContent() {
       <Works />
       <CallToAction />
       <Capabilities />
-      <About background={"/images/background-3.png"} />
+      <About background={"/images/background-3.webp"} />
       <Faq />
       <Footer />
     </>

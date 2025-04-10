@@ -2,6 +2,19 @@ import * as React from 'react';
 import Divider from '@mui/material/Divider';
 import { Box } from '@mui/material'
 import { styled, useColorScheme, useTheme, Theme } from '@mui/material/styles';
+import { Suspense } from 'react';
+import Skeleton from '@mui/material/Skeleton';
+
+function Test() {
+    return (
+        <Skeleton
+            sx={{ bgcolor: 'grey.900' }}
+            variant="rectangular"
+            width={210}
+            height={118}
+        />
+    )
+}
 
 export default function Section(props) {
     const theme = useTheme();
@@ -43,7 +56,11 @@ export default function Section(props) {
                     flex: `auto`,
                     justifyContent: `center`,
                     flexFlow: `wrap`
-                }}>{props.children}</Box>
+                }}>
+                    <Suspense fallback={<Test />}>
+                        {props.children}
+                    </Suspense>
+                </Box>
             </Box>
             <Divider />
         </>

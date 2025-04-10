@@ -304,7 +304,7 @@
         "orcid": "...............",
         "email": "..............."
       },
-      "photo": "/images/team.jpg"
+      "photo": "/images/team.webp"
     },
     {
       "first_name": "...............",
@@ -316,7 +316,7 @@
         "email": "...............",
         "orcid": "..............."
       },
-      "photo": "/images/team.jpg"
+      "photo": "/images/team.webp"
     },
     {
       "first_name": "...............",
@@ -328,7 +328,7 @@
         "email": "...............",
         "orcid": "..............."
       },
-      "photo": "/images/team.jpg"
+      "photo": "/images/team.webp"
     },
     {
       "first_name": "...............",
@@ -349,7 +349,7 @@
         "orcid": "...............",
         "email": "..............."
       },
-      "photo": "/images/team.jpg"
+      "photo": "/images/team.webp"
     }
   ],
   "Footer": {

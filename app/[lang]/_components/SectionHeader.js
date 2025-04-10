@@ -1,20 +1,16 @@
-"use client"
+// components/Header.jsx
+"use client";
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../i18n-context';
 import { useTheme } from '@mui/material/styles';
-import * as React from 'react';
-import { Box, Container, useMediaQuery, Grid } from '@mui/material'
-
-import { useParallax } from "react-scroll-parallax";
+import React from 'react';
+import { Box, Container, Grid } from '@mui/material';
+import ScrollGrow from './ScrollGrow';
 
 export default function Header(props) {
     const theme = useTheme();
-    const content = useI18n()
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const { mode, setMode } = useColorScheme();
-    const isDark = mode == 'dark'
-    const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
-    const { ref } = useParallax({ scale: [0.8, 1], opacity: [0.3, 1] })
+    const { mode } = useColorScheme();
+    const isDark = mode == 'dark';
+    const backgroundColor = isDark ? theme.palette.primary.background : theme.palette.secondary.light;
 
     return (
         <Box sx={{
@@ -27,22 +23,29 @@ export default function Header(props) {
             flexDirection: `column`,
             paddingTop: `20px`,
             textTransform: `uppercase`,
-        }}><Container maxWidth="xl" sx={{
-            display: `flex`,
-            justifyContent: `center`,
-        }}><Grid
-            ref={ref}
-            container
-            direction="column"
-            spacing={1}
-            alignContent={"center"}
-            justifyContent="center"
-            sx={{
-                display: "flex",
-            }}>
-                    {props.children}
-                </Grid>
-            </Container >
-        </Box >
-    )
+        }}>
+            <ScrollGrow
+                animationDelay={500}
+                threshold={0.01}
+                timeout={500}
+                transformOrigin="0 0 0"
+            >
+                <Container maxWidth="xl" sx={{
+                    display: `flex`,
+                    justifyContent: `center`,
+                }}>
+                    <Grid
+                        container
+                        direction="column"
+                        spacing={1}
+                        alignContent={"center"}
+                        justifyContent="center"
+                        sx={{ display: "flex" }}
+                    >
+                        {props.children}
+                    </Grid>
+                </Container>
+            </ScrollGrow>
+        </Box>
+    );
 }

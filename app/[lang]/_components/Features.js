@@ -5,13 +5,13 @@ import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import {
-    Card, CardContent, 
-    Typography, 
-    useMediaQuery, Grid} from '@mui/material'
+    Card, CardContent,
+    Typography,
+    useMediaQuery, Grid
+} from '@mui/material'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
+import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
@@ -24,7 +24,7 @@ function Desktop() {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode == 'dark'
-    const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
+    const backgroundColor = isDark ? theme.palette.primary.background : theme.palette.secondary.light
     const { dict } = useI18n()
     const content = dict.Home.Features.Content
     return (
@@ -39,13 +39,11 @@ function Desktop() {
             }}
         >
             <Swiper
-                autoplay={{ delay: 5000 }}
-                centeredSlides={true}
                 loop={true}
-                modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
+                modules={[Pagination, Navigation, EffectCoverflow]}
                 navigation={{ enabled: true }}
                 pagination={{ clickable: true }}
-                spaceBetween={1}
+                spaceBetween={10}
                 slidesPerView={3}
                 effect={'coverflow'}
                 grabCursor={true}
@@ -121,11 +119,6 @@ function Mobile() {
         >
             <Swiper
                 spaceBetween={10}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 5000,
-                    pauseOnMouseEnter: true
-                }}
                 pagination={{
                     clickable: true,
                 }}
@@ -133,7 +126,7 @@ function Mobile() {
                     enabled: true
                 }}
                 loop={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Pagination, Navigation]}
                 className="swiper-slider"
                 style={{
                     display: "flex",
@@ -195,7 +188,7 @@ export default function Features() {
     return (
         <Section id="features" sx={{
             alignItems: `center`,
-            backgroundImage: `url("/images/background-2.png")`
+            backgroundImage: `url("/images/background-2.webp")`
         }}>
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{

@@ -48,7 +48,7 @@ function PageContent() {
   return (
     <>
       <Navbar />
-      <Hero background={"/images/background-4.jpg"} />
+      <Hero background={"/images/background-4.webp"} />
       <CallToAction />
       <Footer />
     </>

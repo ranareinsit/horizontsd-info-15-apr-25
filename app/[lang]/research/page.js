@@ -51,7 +51,7 @@ function PageContent() {
   return (
     <>
       <Navbar />
-      <Hero background={"/images/background-4.jpg"} />
+      <Hero background={"/images/background-4.webp"} />
       <Work1 />
       <Work2 />
       <Work3 />
