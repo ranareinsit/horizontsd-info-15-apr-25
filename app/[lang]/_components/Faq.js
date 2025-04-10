@@ -10,6 +10,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SectionHeader from "./SectionHeader"
 import Section from "./Section"
+import { theme } from '../theme';
 
 function FAQ() {
     const [expanded, setExpanded] = React.useState([]);
@@ -55,6 +56,7 @@ function FAQ() {
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls={`panel${i + 1}d-content`}
                                     id={`panel${i + 1}d-header`}
+                                    sx={{background: expanded.includes(`panel${i + 1}`) ? theme.palette.primary.light : 'unset'}}
                                 >
                                     <Typography component="span" variant="subtitle2">
                                         {item.question}

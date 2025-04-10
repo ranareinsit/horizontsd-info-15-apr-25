@@ -29,6 +29,7 @@ function Row1() {
             <Stack direction={"column"}>
                 <Typography variant={isMobile ? 'h4' : 'h3'} sx={{
                     userSelect: `none`,
+                    maxWidth: isMobile ? `100%` : `70%`,
                     textShadow: `0px 1px 1px ${theme.palette.primary.main}`,
                 }}>{content.row1Title}</Typography>
             </Stack>
@@ -111,7 +112,7 @@ function Row3() {
     const { dict } = useI18n()
     const content = dict.Footer
     return (
-        <Stack direction={isMobile ? "column" : "row"} sx={{
+        <Stack direction={isMobile ? "column-reverse" : "row"} sx={{
             display: `flex`,
             width: `100%`,
             justifyContent: `space-between`,
@@ -170,7 +171,7 @@ function Background() {
     const theme = useTheme();
     const { mode } = useColorScheme();
     const isDark = mode == 'dark'
-    const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
+    const backgroundColor = isDark ? theme.palette.primary.background : theme.palette.secondary.light
     const color = mode === "dark"
         ? theme.palette.primary[600]
         : theme.palette.primary[50]
@@ -199,7 +200,7 @@ function Background() {
                     width: '100%',
                     height: '100%',
                     background: `linear-gradient(330deg, ${backgroundColor}, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark}, ${backgroundColor})`,
-                    maskImage: `url(/images/mask.png), linear-gradient(252deg, ${maskColor}, ${maskColor2})`,
+                    maskImage: `url(/images/mask.webp), linear-gradient(252deg, ${maskColor}, ${maskColor2})`,
                     maskRepeat: 'no-repeat',
                     maskSize: '100vw 100vh',
                     maskComposite: 'destination-over',

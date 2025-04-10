@@ -15,7 +15,7 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import SchoolIcon from '@mui/icons-material/School';
 import BadgeIcon from '@mui/icons-material/Badge';
 import LabelIcon from '@mui/icons-material/Label';
-
+import ScrollGrow from './ScrollGrow';
 function cF(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
@@ -38,69 +38,85 @@ function Content() {
             }}>{teamData.map((member, i) => (
                 <Grid container key={i} size={{ xs: 12, sm: 6, md: 6, lg: 4 }} spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }} justifyContent="center" sx={{
                 }}>
+
                     <Card sx={{ maxWidth: 345 }}>
-                        <CardMedia
-                            sx={{ height: 240, backgroundColor: `rgba(18,18,18,0.9)` }}
-                            image={member?.photo?.length > 0 ? member?.photo : ""}
-                        />
-                        <CardContent>
-                            {member?.first_name && member?.first_name && member?.last_name && <Stack direction={"row"} sx={{ alignItems: "center", overflow: `hidden`, whiteSpace: `nowrap` }} >
-                                <BadgeIcon sx={{ marginRight: `1rem` }} />
-                                <Typography sx={{ textOverflow: `ellipsis`, userSelect: "text" }} variant="body2" component="div">{cF(member?.first_name)} {cF(member?.last_name)}</Typography>
-                            </Stack>
-                            }
-                            {member?.education && <Stack direction={"row"} sx={{ alignItems: "center", overflow: `hidden`, whiteSpace: `nowrap` }}>
-                                <SchoolIcon sx={{ marginRight: `1rem` }} />
-                                <Tooltip title={member?.education}>
-                                    <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.education)}</Typography>
-                                </Tooltip>
-                            </Stack>
-                            }
-                            {member?.job_title && <Stack direction={"row"} sx={{ alignItems: "center" }}>
-                                <LabelIcon sx={{ marginRight: `1rem` }} />
-                                <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.job_title)}</Typography>
-                            </Stack>
-                            }
-                            {member?.contacts?.telegram && <Stack direction={"row"} sx={{ alignItems: "center" }}>
-                                <TelegramIcon sx={{ marginRight: `1rem` }} />
-                                <Tooltip title={member?.contacts?.telegram}>
-                                    <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.contacts?.telegram)}</Typography>
-                                </Tooltip>
-                            </Stack>
-                            }
-                            {member?.contacts?.email && <Stack direction={"row"} sx={{ alignItems: "center" }}>
-                                <AlternateEmailIcon sx={{ marginRight: `1rem` }} />
-                                <Tooltip title={member?.contacts?.email}>
-                                    <Typography sx={{ textOverflow: `ellipsis`, userSelect: "text" }} variant="caption" component="div">{(member?.contacts?.email)}</Typography>
-                                </Tooltip>
-                            </Stack>
-                            }
-                            {member?.contacts?.orcid &&
-                                <Stack direction={"row"} sx={{ alignItems: "center" }}>
-                                    <Box sx={{
-                                        display: `flex`,
-                                        justifyContent: `center`,
-                                        alignItems: `center`,
-                                        marginRight: `1rem`,
-                                        width: `24px`,
-                                        height: `24px`,
-                                    }}>
-                                        <Image
-                                            src={"/images/orcid_id.svg"}
-                                            alt="logo"
-                                            width={24}
-                                            height={24}
-                                            unoptimized
-                                            style={{ userSelect: `none` }}
-                                            href="/"
-                                        />
-                                    </Box>
-                                    <Tooltip title={member?.contacts?.orcid}>
-                                        <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.contacts?.orcid)}</Typography>
+                        <ScrollGrow
+                            animationDelay={500}
+                            threshold={0.01}
+                            timeout={500}
+                            transformOrigin="0 0 0"
+                        >
+                            <CardMedia
+                                sx={{ height: 240, backgroundColor: `rgba(18,18,18,0.9)` }}
+                                image={member?.photo?.length > 0 ? member?.photo : ""}
+                            />
+                        </ScrollGrow>
+
+                        <ScrollGrow
+                            animationDelay={500}
+                            threshold={0.01}
+                            timeout={500}
+                            transformOrigin="0 0 0"
+                        >
+                            <CardContent>
+                                {member?.first_name && member?.first_name && member?.last_name && <Stack direction={"row"} sx={{ alignItems: "center", overflow: `hidden`, whiteSpace: `nowrap` }} >
+                                    <BadgeIcon sx={{ marginRight: `1rem` }} />
+                                    <Typography sx={{ textOverflow: `ellipsis`, userSelect: "text" }} variant="body2" component="div">{cF(member?.first_name)} {cF(member?.last_name)}</Typography>
+                                </Stack>
+                                }
+                                {member?.education && <Stack direction={"row"} sx={{ alignItems: "center", overflow: `hidden`, whiteSpace: `nowrap` }}>
+                                    <SchoolIcon sx={{ marginRight: `1rem` }} />
+                                    <Tooltip title={member?.education}>
+                                        <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.education)}</Typography>
                                     </Tooltip>
                                 </Stack>
-                            }
-                        </CardContent>
+                                }
+                                {member?.job_title && <Stack direction={"row"} sx={{ alignItems: "center" }}>
+                                    <LabelIcon sx={{ marginRight: `1rem` }} />
+                                    <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.job_title)}</Typography>
+                                </Stack>
+                                }
+                                {member?.contacts?.telegram && <Stack direction={"row"} sx={{ alignItems: "center" }}>
+                                    <TelegramIcon sx={{ marginRight: `1rem` }} />
+                                    <Tooltip title={member?.contacts?.telegram}>
+                                        <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.contacts?.telegram)}</Typography>
+                                    </Tooltip>
+                                </Stack>
+                                }
+                                {member?.contacts?.email && <Stack direction={"row"} sx={{ alignItems: "center" }}>
+                                    <AlternateEmailIcon sx={{ marginRight: `1rem` }} />
+                                    <Tooltip title={member?.contacts?.email}>
+                                        <Typography sx={{ textOverflow: `ellipsis`, userSelect: "text" }} variant="caption" component="div">{(member?.contacts?.email)}</Typography>
+                                    </Tooltip>
+                                </Stack>
+                                }
+                                {member?.contacts?.orcid &&
+                                    <Stack direction={"row"} sx={{ alignItems: "center" }}>
+                                        <Box sx={{
+                                            display: `flex`,
+                                            justifyContent: `center`,
+                                            alignItems: `center`,
+                                            marginRight: `1rem`,
+                                            width: `24px`,
+                                            height: `24px`,
+                                        }}>
+                                            <Image
+                                                src={"/images/orcid_id.svg"}
+                                                alt="logo"
+                                                width={24}
+                                                height={24}
+                                                unoptimized
+                                                style={{ userSelect: `none` }}
+                                                href="/"
+                                            />
+                                        </Box>
+                                        <Tooltip title={member?.contacts?.orcid}>
+                                            <Typography sx={{ userSelect: "text" }} variant="caption" component="div">{(member?.contacts?.orcid)}</Typography>
+                                        </Tooltip>
+                                    </Stack>
+                                }
+                            </CardContent>
+                        </ScrollGrow>
                     </Card>
                 </Grid>
             ))}
@@ -115,7 +131,7 @@ export default function About() {
     const { mode } = useColorScheme();
     return (
         <Section id="about" sx={{
-            backgroundImage: `url("/images/background-3.png")`,
+            backgroundImage: `url("/images/background-3.webp")`,
         }}>
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{

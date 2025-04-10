@@ -11,11 +11,11 @@ export const theme = createTheme({
         primary: {
           main: cyan[800],
           contrastText: common['white'],
-          background: red[500],
+          background: blueGrey[900],
         },
         secondary: {
           main: blueGrey[50],
-          background: red[900],
+          background: grey[900],
           contrastText: cyan[100],
 
         },
@@ -31,11 +31,11 @@ export const theme = createTheme({
         primary: {
           main: cyan[50],
           contrastText: common.black,
-          background: red[900],
+          background: grey[900],
         },
         secondary: {
           main: cyan[600],
-          background: red[900],
+          background: grey[900],
           contrastText: grey[50],
         },
         text: {

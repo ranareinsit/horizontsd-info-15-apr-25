@@ -51,7 +51,7 @@ function PageContent() {
   return (
     <>
       <Navbar />
-      <Hero background={"/images/background-5.jpg"} />
+      <Hero background={"/images/background-5.webp"} />
       <Prediction />
       <Processing />
       <CallToAction />

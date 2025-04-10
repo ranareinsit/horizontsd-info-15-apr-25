@@ -4,9 +4,11 @@ import { useI18n } from '../../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
+import ScrollGrow from './ScrollGrow';
+
 import {
     Card, CardContent, CardMedia,
-    Container, Typography, Button, 
+    Container, Typography, Button,
     useMediaQuery, Grid
 } from '@mui/material';
 import Section from "./Section";
@@ -17,19 +19,20 @@ const StyledButton = styled(Button)(({ theme }) => ({
     padding: theme.spacing(1.5, 4),
     borderRadius: '12px',
     transition: 'all 0.3s ease',
+    color: `textPrimary`,
+    background: `linear-gradient(0deg, ${theme.palette.primary.dark}, ${theme.palette.primary.light})`,
     '&:hover': {
         transform: 'translateY(-2px)',
-        boxShadow: theme.shadows[6]
+        boxShadow: theme.shadows[6],
     }
 }));
 
 const GradientCard = styled(Card)(({ theme }) => ({
-    background: 'linear-gradient(135deg, rgba(78, 155, 158, 0.9) 0%, rgba(27, 85, 95, 0.8) 100%)',
+    background: `linear-gradient(135deg, ${theme.palette.secondary.contrastText} 0%,  ${theme.palette.primary.background} 100% )`,
     backdropFilter: 'blur(8px)',
     borderRadius: '24px',
     overflow: 'hidden',
     boxShadow: theme.shadows[10],
-    border: `1px solid ${theme.palette.divider}`
 }));
 
 function CTA() {
@@ -45,64 +48,82 @@ function CTA() {
             justifyContent: `center`,
             alignItems: `center`
         }}>
-            <GradientCard>
-                <Grid container alignItems="center" spacing={2}>
-                    <Grid size={{ xs: 12, md: 6 }} >
-                        <CardContent sx={{ p: 6 }}>
-                            <Typography
-                                variant="h3"
-                                component="h2"
-                                color={theme.palette.text.primary}
-                                gutterBottom
-                                sx={{ fontWeight: 800 }}
-                            >
-                                {content.h3}
-                            </Typography>
-                            <Typography
-                                variant="body1"
-                                color={theme.palette.text.secprimaryondary}
-                                sx={{ mb: 4, fontSize: '1.1rem' }}
-                            >
-                                {content.body1}
-                            </Typography>
-                            <Stack
-                                direction={isMobile ? 'column' : 'row'}
-                                spacing={2}
-                            >
-                                <StyledButton
-                                    variant="contained"
-                                    color="primary"
-                                    size="large"
-                                >
-                                    {content.StyledButton[0]}
-                                </StyledButton>
-                                <StyledButton
-                                    variant="outlined"
+            <ScrollGrow
+                animationDelay={500}
+                threshold={0.01}
+                timeout={500}
+                transformOrigin="0 0 0"
+            >
+                <GradientCard>
+                    <Grid container alignItems="center" spacing={2}>
+                        <Grid size={{ xs: 12, md: 6 }} >
+                            <CardContent sx={{ p: 6 }}>
+                                <Typography
+                                    variant="h3"
+                                    component="h2"
                                     color={theme.palette.text.primary}
-                                    size="large"
+                                    gutterBottom
+                                    sx={{
+                                        fontWeight: 800,
+                                        backgroundImage: `linear-gradient(0deg,${theme.palette.primary.dark}, ${theme.palette.secondary.background})`,
+                                        color: `transparent`,
+                                        backgroundClip: `text`,
+                                    }}
                                 >
-                                    {content.StyledButton[1]}
-                                </StyledButton>
-                            </Stack>
-                        </CardContent>
+                                    {content.h3}
+                                </Typography>
+                                <Typography
+                                    variant="body1"
+                                    color={theme.palette.text.secprimaryondary}
+                                    sx={{
+                                        mb: 4, fontSize: '1.1rem',
+                                        backgroundImage: `linear-gradient(0deg,${theme.palette.primary.dark}, ${theme.palette.secondary.background})`,
+                                        color: `transparent`,
+                                        backgroundClip: `text`,
+
+                                    }}
+                                >
+                                    {content.body1}
+                                </Typography>
+                                <Stack
+                                    direction={isMobile ? 'column' : 'row'}
+                                    spacing={2}
+                                >
+                                    <StyledButton
+                                        variant="contained"
+                                        color="primary"
+                                        size="large"
+                                    >
+                                        {content.StyledButton[0]}
+                                    </StyledButton>
+                                    <StyledButton
+                                        variant="outlined"
+                                        color={theme.palette.text.primary}
+                                        size="large"
+                                    >
+                                        {content.StyledButton[1]}
+                                    </StyledButton>
+                                </Stack>
+                            </CardContent>
+                        </Grid>
+                        <Grid size={{ xs: 12, md: 6 }} >
+                            <CardMedia
+                                component="img"
+                                image={mode === 'dark'
+                                    ? '/images/short_logo_black.webp'
+                                    : '/images/short_logo_white.webp'}
+                                alt="CTA Illustration"
+                                sx={{
+                                    width: `100%`,
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    objectPosition: 'center'
+                                }}
+                            />
+                        </Grid>
                     </Grid>
-                    <Grid size={{ xs: 12, md: 6 }} >
-                        <CardMedia
-                            component="img"
-                            image={mode === 'dark'
-                                ? '/images/short_logo_black.png'
-                                : '/images/short_logo_white.png'}
-                            alt="CTA Illustration"
-                            sx={{
-                                width: `100%`,
-                                height: '100%',
-                                objectFit: 'cover',
-                                objectPosition: 'center'
-                            }}
-                        />
-                    </Grid>
-                </Grid>
-            </GradientCard>
+                </GradientCard>
+            </ScrollGrow>
         </Container>
     );
 }

@@ -14,29 +14,29 @@ function Mobile() {
     const content = dict.Home.Hero
     return (
         <Stack spacing={1}>
-            <Parallax scale={[1, 1.2]} startScroll={0} endScroll={400} translateY={[300, 800]}>
-                <Stack spacing={1} direction={"row"}>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            fontFamily: bebasNeue.style.fontFamily,
-                        }}
-                    >Horizon</Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            fontFamily: bebasNeue.style.fontFamily,
-                        }}
-                    >Time Series Data
-                    </Typography>
-                </Stack>
-
+            {/* <Parallax scale={[1, 1.2]} startScroll={0} endScroll={400} translateY={[300, 800]}> */}
+            <Stack spacing={1} direction={"row"}>
                 <Typography
-                    variant="body1"
-                    sx={{ fontFamily: bebasNeue.style.fontFamily, }}
-                >{content.slogan}
+                    variant="h4"
+                    sx={{
+                        fontFamily: bebasNeue.style.fontFamily,
+                    }}
+                >Horizon</Typography>
+                <Typography
+                    variant="h4"
+                    sx={{
+                        fontFamily: bebasNeue.style.fontFamily,
+                    }}
+                >Time Series Data
                 </Typography>
-            </Parallax>
+            </Stack>
+
+            <Typography
+                variant="body1"
+                sx={{ fontFamily: bebasNeue.style.fontFamily, }}
+            >{content.slogan}
+            </Typography>
+            {/* </Parallax> */}
         </Stack>
     )
 }
@@ -51,30 +51,30 @@ function Desktop() {
     const content = dict.Home.Hero
     return (
         <Stack direction={"column"}>
-            <Parallax scale={[1, 1.4]} startScroll={0} endScroll={400} translateY={[150, 400]}>
-                <Stack spacing={3} direction={"row"}>
-                    <Typography variant="h1"
-                        sx={{
-                            fontFamily: bebasNeue.style.fontFamily,
-                            color: baseColor
-                        }}
-                    >Horizon</Typography>
-                    <Typography variant="h1"
-                        sx={{
-                            fontFamily: bebasNeue.style.fontFamily,
-                            color: accentColor
-                        }}
-                    >Time Series Data</Typography>
-                </Stack>
-                <Stack direction={"column"} position={"center"}>
-                    <Typography variant="h4"
-                        sx={{
-                            fontFamily: bebasNeue.style.fontFamily,
-                            textAlign: 'center',
-                            color: baseColor
-                        }}>{content.slogan}</Typography>
-                </Stack>
-            </Parallax>
+            {/* <Parallax scale={[1, 1.4]} startScroll={0} endScroll={400} translateY={[150, 400]}> */}
+            <Stack spacing={3} direction={"row"}>
+                <Typography variant="h1"
+                    sx={{
+                        fontFamily: bebasNeue.style.fontFamily,
+                        color: baseColor
+                    }}
+                >Horizon</Typography>
+                <Typography variant="h1"
+                    sx={{
+                        fontFamily: bebasNeue.style.fontFamily,
+                        color: accentColor
+                    }}
+                >Time Series Data</Typography>
+            </Stack>
+            <Stack direction={"column"} position={"center"}>
+                <Typography variant="h4"
+                    sx={{
+                        fontFamily: bebasNeue.style.fontFamily,
+                        textAlign: 'center',
+                        color: baseColor
+                    }}>{content.slogan}</Typography>
+            </Stack>
+            {/* </Parallax> */}
         </Stack>
     )
 }
@@ -88,10 +88,12 @@ function Content() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                justifyContent: `center`,
                 pt: { xs: 14, sm: 20 },
                 pb: { xs: 8, sm: 12 },
             }}
-        >{isMobile ? <Mobile /> : <Desktop />}</Container>
+        >{isMobile ? <Mobile /> : <Desktop />}
+        </Container>
     )
 }
 
