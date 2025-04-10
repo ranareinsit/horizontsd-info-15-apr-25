@@ -1,68 +1,64 @@
-# horizontsd-info
-
-<p align="center">
-
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
-![Code Coverage](coverage.svg)
-
-</p>
-
-# Запуск на своей машине
-
-#### Установка зависимостей
-```bash
-
+# To Build Container
+```cmd
+ docker build --pull --rm -f Dockerfile -t horizontsdinfo:latest . --progress=plain
 ```
 
+> map 3000 to 80 port
 
-Активация окружения
-```bash
+<br>
 
-```
+<br>
 
+<br>
 
-Запуск на своей машине
-```bash
+<br>
 
-```
+<br>
 
+# Material UI - Next.js App Router example
 
+This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/HEAD/packages/create-next-app) with Material UI installed.
 
-# Запуск контейнера локально
+## How to use
 
-### Строим контейнер
-```bash
-sudo docker build -t horizon_info .
-```
-Узнаем его ID
-```bash
-sudo docker images
-```
+Download the example [or clone the repo](https://github.com/mui/material-ui):
+
+<!-- #repo-reference -->
 
 ```bash
-sudo docker run -d -p 7070:7071 <IMAGE ID>
+curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/material-ui-nextjs
+cd material-ui-nextjs
 ```
 
-# Запуск контейнера публично
-
-### Строим контейнер
-```bash
-sudo docker build -t horizon_info .
-```
-Узнаем его IMAGE ID
-```bash
-sudo docker images
-```
+Install it and run:
 
 ```bash
-docker run -d -p 7070:7070 <IMAGE ID>
+npm install
+npm run dev
 ```
 
-```bash
-docker run -d -p 80:7070 <IMAGE ID>
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-docker run -d -p 7070:80 <IMAGE ID>
-```
+or:
 
+<!-- #repo-reference -->
+
+[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-nextjs)
+
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/master/examples/material-ui-nextjs)
+
+## Learn more
+
+To learn more about this example:
+
+<!-- #host-reference -->
+
+- [Next.js documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Customizing Material UI](https://mui.com/material-ui/customization/how-to-customize/) - approaches to customizing Material UI.
+
+## What's next?
+
+<!-- #host-reference -->
+
+You now have a working example project.
+You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.
