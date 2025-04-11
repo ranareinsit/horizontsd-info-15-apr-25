@@ -2,66 +2,32 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
-import Fade from '@mui/material/Fade';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Toolbar from '@mui/material/Toolbar';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Navbar from "./_components/Navbar"
-import Hero from "./_components/Hero"
+import Navbar from "../_components/Navbar"
+import Hero from "../_components/Hero"
 import CallToAction from "../_components/CallToAction"
 import Footer from "../_components/Footer"
 import Optimization from './_components/Optimization';
 import Prediction from './_components/Prediction';
 import Processing from './_components/Processing';
-
-function ScrollTop(props) {
-  const { children, window } = props;
-  const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
-    disableHysteresis: true,
-    threshold: 100,
-  });
-
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#back-to-top-anchor',
-    );
-    if (anchor) {
-      anchor.scrollIntoView({
-        block: 'center',
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  return (
-    <Fade in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16, zIndex: `999` }}
-      >
-        {children}
-      </Box>
-    </Fade>
-  );
-}
+import ScrollTop from "../_components/ScrollTop"
 
 function PageContent() {
   return (
     <>
       <Navbar />
-      <Hero background={"/images/background-5.webp"} />
-      <Prediction />
-      <Processing />
-      <CallToAction />
+      <Hero background={"/images/background-5.webp"} fullsize={false} />
       <Optimization />
+      <Prediction />
+      <CallToAction />
+      <Processing />
       <Footer />
     </>
   )
 }
 
-export default function Page({ params }) {
+export default function Page() {
   return (
     <Box sx={{
       overflowX: `hidden`,

@@ -22,6 +22,7 @@
           },
           "block": {
             "title": "Smart Data Processing",
+            "link": "/features#processing",
             "description": [
               "Our proprietary SKNN and H-DIRT algorithms go beyond traditional methods, identifying hidden seasonal patterns and filling data gaps without skewing trends.",
               "By applying distance correlation, we capture nonlinear relationships between external factors (like weather) and energy loads—ensuring your models train on perfectly preprocessed data.",
@@ -36,6 +37,7 @@
           },
           "block": {
             "title": "Adaptive AI Forecasting",
+            "link": "/features#prediction",
             "description": [
               "Not all data behaves the same—so we deploy LSTM, XGBoost, Transformer, and hybrid models to match your unique dynamics.",
               "With temporal encoding and real-time external factors (e.g., temperature), our system self-adjusts for 95%+ accuracy—and scales effortlessly to new assets or timeframes.",
@@ -50,6 +52,7 @@
           },
           "block": {
             "title": "Automated Savings",
+            "link": "/features#optimization",
             "description": [
               "Stop overpaying for energy.",
               "Our AI flattens demand spikes, optimizes power purchases, and cuts preprocessing time by 80% via full automation.",
@@ -291,8 +294,215 @@
       ]
     }
   },
-  "Features": {},
-  "Works": {},
+  "Features": {
+    "Optimization": {
+      "SectionHeader": {
+        "h4": "Cost Optimization",
+        "body2": "Reduce energy waste by 30%+ with automated demand smoothing and smart procurement."
+      },
+      "Content": [
+        {
+          "image": "/images/images_features/optimization-0.webp",
+          "title": "Simple Forecast",
+          "description": [
+            "Instant insights, zero hassle",
+            "Upload your data, pick a timeframe, and let our science-backed models auto-generate forecasts.",
+            "Perfect for quick trendspotting or preliminary analysis when speed trumps ultra-precision."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-1.webp",
+          "title": "Data Dive",
+          "description": [
+            "See what your data’s hiding",
+            "Unmask seasonal patterns, volatility hotspots, and predictability limits with granular time-series analytics.",
+            "For teams who need more than surface-level trends – understand the why behind the numbers."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-2.webp",
+          "title": "Train Your AI",
+          "description": [
+            "Custom accuracy, no code needed",
+            "Tweak parameters, test scenarios, and fine-tune models to your unique data—all through intuitive sliders, not Python.",
+            "Get forecasts that adapt to your business quirks, not the other way around."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-3.webp",
+          "title": "Always-On Insights",
+          "description": [
+            "Forecasts that chase you",
+            "Get SMS/email alerts when predictions hit your custom thresholds.",
+            "Spot anomalies early, dodge risks faster, and keep teams synced—no dashboard refreshing required."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-4.webp",
+          "title": "Smart Alerts Builder",
+          "description": [
+            "Your rules, your reactions",
+            "Define triggers like “Notify if forecasted demand exceeds X” and automate responses.",
+            "Syncs with Slack, Teams, or your internal tools to turn predictions into actions."
+          ]
+        },
+        {
+          "image": "/images/images_features/optimization-5.webp",
+          "title": "Threshold Guardian",
+          "description": [
+            "Safety nets for your forecasts",
+            "When predictions breach critical levels (e.g., energy overloads), get instant warnings.",
+            "Pre-set escalation rules ensure the right people act—before it becomes a cost."
+          ]
+        }
+      ]
+    },
+    "Prediction": {
+      "SectionHeader": {
+        "h4": "Prediction",
+        "body2": "Prediction body"
+      },
+      "Content": [
+        {
+          "image": "/images/images_features/prediction-0.webp",
+          "title": "Simple Forecast",
+          "description": [
+            "Quick insights, zero effort",
+            "Upload your data, pick a timeframe, and let our science-backed models auto-generate forecasts.",
+            "Perfect for fast trendspotting or preliminary analysis—when speed matters more than ultra-precision."
+          ],
+          "title2": "Why it stands out",
+          "description2": [
+            "✅ One-click predictions",
+            "✅ Research-driven algorithms",
+            "✅ Ideal for rapid decision-making"
+          ]
+        },
+        {
+          "image": "/images/images_features/prediction-1.webp",
+          "title": "Train Your AI",
+          "description": [
+            "Custom accuracy, no code needed",
+            "Tweak parameters, test scenarios, and fine-tune models to your data—all through intuitive sliders, not Python.",
+            "Get forecasts that adapt to your business quirks."
+          ],
+          "title2": "Why it’s powerful:",
+          "description2": [
+            "⚙️ Drag-and-drop parameter tuning",
+            "⚙️ Adapts to unique data patterns",
+            "⚙️ Boosts accuracy for strategic decisions"
+          ]
+        },
+        {
+          "image": "/images/images_features/prediction-2.webp",
+          "title": "Assess Accuracy",
+          "description": [
+            "Transparency you can measure",
+            "Compare models side-by-side using MSE, R², MAE, and 10+ other metrics.",
+            "See exactly where your forecast shines (or needs polish)—no guesswork."
+          ],
+          "title2": "Why it matters:",
+          "description2": [
+            "🔍 Benchmark performance objectively",
+            "🔍 Spot weaknesses with error heatmaps",
+            "🔍 Trust data, not hunches"
+          ]
+        }
+      ]
+    },
+    "Processing": {
+      "SectionHeader": {
+        "h4": "Processing",
+        "body2": "Processing body"
+      },
+      "Content": [
+        {
+          "image": "/images/images_features/processing-0.webp",
+          "title": "Interactive Dashboard",
+          "description": [
+            "Instant insights at your fingertips",
+            "Upload your data, set your forecast horizon, and let our research-driven algorithms handle the rest.",
+            "Designed for speed and simplicity, this tool delivers quick trend assessments and actionable insights—perfect when you need fast answers, not lab-grade precision."
+          ],
+          "title2": "Key strengths:",
+          "description2": [
+            "✅ One-click forecasting",
+            "✅ Science-backed models",
+            "✅ Ideal for rapid scenario evaluation"
+          ]
+        },
+        {
+          "image": "/images/images_features/processing-1.webp",
+          "title": "Metric Visualization",
+          "description": [
+            "See the story behind your data",
+            "Dive deep into time-series patterns, seasonal trends, and volatility hotspots.",
+            "Our interactive tools transform raw numbers into visual narratives—exposing hidden drivers of demand, risks, and opportunities."
+          ],
+          "title2": "Why it matters:",
+          "description2": [
+            "📈 Identify predictability limits",
+            "📈 Compare forecast vs. actuals in real-time",
+            "📈 Turn \"data noise\" into boardroom-ready strategies"
+          ]
+        },
+        {
+          "image": "/images/images_features/processing-2.webp",
+          "title": "Seasonality Analysis",
+          "description": [
+            "Predict cycles, not chaos",
+            "Automatically detect recurring patterns—weekly sales spikes, monthly energy surges, annual inventory drops.",
+            "Customize models via intuitive sliders (no coding!) to align forecasts with your unique business rhythms."
+          ],
+          "title2": "Built for adaptability",
+          "description2": [
+            "🔄 Pre-built templates for common cycles",
+            "🔄 Manual override for edge cases",
+            "🔄 Sync findings to procurement/planning teams"
+          ]
+        }
+      ]
+    }
+  },
+  "Research": {
+    "Button": "Learn more",
+    "Content": [
+      {
+        "image": "/images/images_research/Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding.webp",
+        "title": "Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding",
+        "description": [
+          "This paper presents a new approach to short-term electrical load forecasting, focusing on temporal encoding and minimizing the impact of weather data.",
+          "The study found that weather variables had little effect on forecast accuracy, leading to a shift towards encoding time features like minute, hour, and day using sine and cosine transformations.",
+          "Advanced machine learning models, including Bi-LSTM and CNN-Bi-LSTM, were tested, with the Bi-LSTM model showing the highest accuracy when combined with the temporal encoding technique.",
+          "The findings emphasize the importance of time feature engineering in improving forecast reliability."
+        ]
+      },
+      {
+        "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
+        "title": "Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series",
+        "description": [
+          "This paper addresses missing data in power demand time series by comparing imputation methods.",
+          "It introduces two new approaches: Historical Data Informed Regression (H-DIRT) and Seasonal K-Nearest Neighbors (SKNN).",
+          "H-DIRT uses historical data for linear regression, while SKNN adds seasonal trends.",
+          "SKNN is more accurate, but H-DIRT is faster for smaller data gaps.",
+          "The study shows these methods can improve power demand data accuracy, providing a solid base for future research."
+        ]
+      },
+      {
+        "image": "/images/images_research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
+        "title": "Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data",
+        "description": [
+          "Accurate short-term electrical load forecasting is crucial for efficient energy management and grid stability.",
+          "This paper presents an advanced ensemble approach for enhancing short-term load forecasting accuracy by integrating Random Forest (RF) and Histogram-based Gradient Boosting Regression (HGBR) algorithms.",
+          "The ensemble method leverages the strengths of each algorithm to capture complex patterns and interactions in the data.",
+          "Notably, the model incorporates real-world data from the University of Brescia's electrical facility data collection system, adding practical relevance to the study.",
+          "Additionally, external weather components, particularly ambient temperature, are included to improve predictive capabilities.",
+          "Experimental results demonstrate that the proposed ensemble model significantly outperforms individual forecasting methods in some metrics, achieving higher accuracy and reliability in predicting electrical load.",
+          "The inclusion of ambient temperature as an external variable contributes to the enhanced performance, highlighting the importance of weather factors in load forecasting."
+        ]
+      }
+    ]
+  },
   "Team": [
     {
       "first_name": "...............",

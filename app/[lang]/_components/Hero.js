@@ -14,8 +14,7 @@ function Mobile() {
     const content = dict.Home.Hero
     return (
         <Stack spacing={1}>
-            {/* <Parallax scale={[1, 1.2]} startScroll={0} endScroll={400} translateY={[300, 800]}> */}
-            <Stack spacing={1} direction={"row"}>
+            <Stack spacing={1} direction={"row"} >
                 <Typography
                     variant="h4"
                     sx={{
@@ -36,7 +35,6 @@ function Mobile() {
                 sx={{ fontFamily: bebasNeue.style.fontFamily, }}
             >{content.slogan}
             </Typography>
-            {/* </Parallax> */}
         </Stack>
     )
 }
@@ -51,7 +49,6 @@ function Desktop() {
     const content = dict.Home.Hero
     return (
         <Stack direction={"column"}>
-            {/* <Parallax scale={[1, 1.4]} startScroll={0} endScroll={400} translateY={[150, 400]}> */}
             <Stack spacing={3} direction={"row"}>
                 <Typography variant="h1"
                     sx={{
@@ -74,7 +71,6 @@ function Desktop() {
                         color: baseColor
                     }}>{content.slogan}</Typography>
             </Stack>
-            {/* </Parallax> */}
         </Stack>
     )
 }
@@ -89,8 +85,6 @@ function Content() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: `center`,
-                pt: { xs: 14, sm: 20 },
-                pb: { xs: 8, sm: 12 },
             }}
         >{isMobile ? <Mobile /> : <Desktop />}
         </Container>
@@ -114,14 +108,15 @@ export default function Hero(props) {
             backgroundSize: 'cover',
             display: 'flex',
             flexDirection: 'column',
-            height: '100vh',
             justifyContent: 'center',
             overflow: 'hidden',
             position: 'relative',
             width: '100vw',
             zIndex: 2,
             userSelect: 'none',
-            maxHeight: '1080px'
+            maxHeight: '1080px',
+            minHeight: `30vh`,
+            height: props?.fullsize ? '100vh' : `30vh`
         }}>
             <Content />
         </Section>
