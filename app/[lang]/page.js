@@ -1,11 +1,7 @@
 "use client"
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import Fade from '@mui/material/Fade';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Toolbar from '@mui/material/Toolbar';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Navbar from "./_components/Navbar"
 import Hero from "./_components/Hero"
 import Features from "./_components/Features"
@@ -16,33 +12,13 @@ import CallToAction from "./_components/CallToAction"
 import About from "./_components/About"
 import Faq from "./_components/Faq"
 import Footer from "./_components/Footer"
-
-function ScrollTop() {
-  const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 100 });
-  const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
-    if (anchor) anchor.scrollIntoView({ block: 'center', behavior: 'smooth' });
-  };
-  return (
-    <Fade in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16, zIndex: `999` }}
-      >
-        <Fab size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon color="second" fontSize="large" />
-        </Fab>
-      </Box>
-    </Fade>
-  );
-}
+import ScrollTop from "./_components/ScrollTop"
 
 function PageContent() {
   return (
     <>
       <Navbar />
-      <Hero background={"/images/background-1.webp"} />
+      <Hero background={"/images/background-1.webp"} fullsize={true} />
       <Applications background={"/images/background-1.webp"} />
       <Features />
       <Works />

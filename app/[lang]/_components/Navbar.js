@@ -26,10 +26,24 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Link from 'next/link';
 import Slide from '@mui/material/Slide';
 
-const NavButton = ({ href, children }) => {
+import { usePathname } from 'next/navigation';
+
+const NavButton = ({ href, children, active }) => {
+    const theme = useTheme();
+    const { mode, setMode } = useColorScheme();
+    const isDark = mode == 'dark'
+
+    // 
+    const pathname = usePathname();
+    // console.log(pathname, href, pathname == href)
     return (
-        <Link href={href} >
-            {children}
+        <Link href={href}>
+            <Button variant="text" sx={{
+                width: `auto`,
+                minWidth: `7rem`,
+                borderBottom: pathname == href ? `2px solid ${isDark ? theme.palette.primary.contrastText : theme.palette.primary.dark}` : 'unset',
+                borderRadius: `0`,
+            }}>{children}</Button>
         </Link>
     );
 };
@@ -124,7 +138,7 @@ function Desktop() {
     const isDark = mode == 'dark'
     const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
     const toggleMode = () => { setMode(mode === 'dark' ? 'light' : 'dark') };
-    const { dict } = useI18n()
+    const { dict, lang } = useI18n()
     const content = dict.Navbar
     return (
         <Container maxWidth="lg">
@@ -139,25 +153,9 @@ function Desktop() {
             }} >
                 <Icon size='s' />
                 <Stack spacing={1} direction={"row"} justifyContent={"start"} sx={{ marginLeft: `1rem` }}>
-                    <NavButton href={"/"}>
-                        <Button variant="text" sx={{
-                            width: `7rem`,
-                            borderBottom: `2px solid ${isDark ? theme.palette.primary.contrastText : theme.palette.primary.dark}`,
-                            borderRadius: `0`,
-                        }}>{content.home}</Button>
-                    </NavButton>
-                    <NavButton href={"/features"}>
-                        <Button variant="text" sx={{
-                            width: `7rem`,
-                            borderRadius: `0`,
-                        }}>{content.features}</Button>
-                    </NavButton>
-                    <NavButton href={"/research"}>
-                        <Button variant="text" sx={{
-                            width: `7rem`,
-                            borderRadius: `0`,
-                        }}>{content.research}</Button>
-                    </NavButton>
+                    <NavButton href={`/${lang}`} active={true}>{content.home}</NavButton>
+                    <NavButton href={`/${lang}/features`} active={false}>{content.features}</NavButton>
+                    <NavButton href={`/${lang}/research`} active={false}>{content.research}</NavButton>
                 </Stack>
                 <Stack spacing={1} direction={"row"} justifySelf={"end"} sx={{ width: `100%`, justifyContent: `end`, alignItems: `center` }}>
                     <LanguageSwitcher />

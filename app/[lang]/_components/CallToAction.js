@@ -28,7 +28,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const GradientCard = styled(Card)(({ theme }) => ({
-    background: `linear-gradient(135deg, ${theme.palette.secondary.contrastText} 0%,  ${theme.palette.primary.background} 100% )`,
+    background: `linear-gradient(100deg, ${theme.palette.secondary.contrastText} 0%,  ${theme.palette.primary.background} 100% )`,
     backdropFilter: 'blur(8px)',
     borderRadius: '24px',
     overflow: 'hidden',
@@ -130,7 +130,10 @@ function CTA() {
 
 export default function CallToAction(props) {
     return (
-        <Section id="call-to-action" sx={{ minHeight: '50vh' }}>
+        <Section id="call-to-action" sx={{
+            backgroundImage: `url(/images/background-3.webp)`,
+            minHeight: '50vh'
+        }}>
             <CTA />
         </Section>
     );

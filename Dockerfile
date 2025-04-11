@@ -1,56 +1,54 @@
-# syntax=docker.io/docker/dockerfile:1
-FROM node:23-alpine3.20 AS base
+# syntax=docker/dockerfile:1
+FROM node:20-alpine AS base
+WORKDIR /app
 
+# Stage 1: Install dependencies
 FROM base AS deps
-ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production YARN_VERSION=4.7.0 PORT=3000
-RUN apk update 
-RUN apk upgrade
-RUN apk add --no-cache libc6-compat
-RUN npm install -g corepack
-RUN npm -v
-RUN corepack enable
-RUN corepack install --global yarn@${YARN_VERSION}
-WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production
 
-COPY .yarnrc.yml package.json yarn.lock package-lock.json ./
+# Install system dependencies and corepack
+RUN apk update && apk upgrade && \
+    apk add --no-cache libc6-compat && \
+    npm install -g corepack && \
+    corepack enable && \
+    corepack prepare yarn@4.7.0 --activate  # Explicit version match
 
-RUN yarn --immutable
+# Copy package manager files
+COPY package.json yarn.lock .yarnrc.yml ./
 
+# Install project dependencies
+RUN yarn install --immutable
+
+# Stage 2: Build application
 FROM base AS builder
-WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production
+
+# Set up Corepack in builder stage
+RUN npm install -g corepack && \
+    corepack enable && \
+    corepack prepare yarn@4.7.0 --activate  # Activate in builder too
+
+# Copy dependencies from previous stage
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production YARN_VERSION=4.7.0 PORT=3000
-RUN apk update 
-RUN apk upgrade
+# Build application
+RUN yarn build
+
+# Stage 3: Production image
+FROM base AS production
+ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production PORT=3000 HOSTNAME=0.0.0.0
+
+# Install runtime dependencies
 RUN apk add --no-cache libc6-compat
-RUN npm i -g corepack@latest
-RUN npm -v
-RUN corepack enable
-RUN corepack install --global yarn@${YARN_VERSION}
-RUN corepack prepare pnpm --activate
 
-RUN yarn run build
+# Copy built assets from builder
+COPY --from=builder --chown=node:node /app/public ./public
+COPY --from=builder --chown=node:node /app/.next/standalone ./
+COPY --from=builder --chown=node:node /app/.next/static ./.next/static
 
-FROM base AS runner
-WORKDIR /app
+# Use unprivileged user
+USER node
+EXPOSE ${PORT}
 
-ENV NODE_ENV=production
-
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
-EXPOSE 3000
-
-ENV PORT=3000
-
-ENV HOSTNAME="0.0.0.0"
 CMD ["node", "server.js"]
