@@ -47,7 +47,5 @@ export async function middleware(request) {
   return response
 }
 export const config = {
-  matcher: [
-    '/'
-  ],
+  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)']
 }
