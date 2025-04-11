@@ -302,7 +302,7 @@
       },
       "Content": [
         {
-          "image": "/images/features/optimization-0.webp",
+          "image": "/images/images_features/optimization-0.webp",
           "title": "Simple Forecast",
           "description": [
             "Instant insights, zero hassle",
@@ -311,7 +311,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-1.webp",
+          "image": "/images/images_features/optimization-1.webp",
           "title": "Data Dive",
           "description": [
             "See what your data’s hiding",
@@ -320,7 +320,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-2.webp",
+          "image": "/images/images_features/optimization-2.webp",
           "title": "Train Your AI",
           "description": [
             "Custom accuracy, no code needed",
@@ -329,7 +329,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-3.webp",
+          "image": "/images/images_features/optimization-3.webp",
           "title": "Always-On Insights",
           "description": [
             "Forecasts that chase you",
@@ -338,7 +338,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-4.webp",
+          "image": "/images/images_features/optimization-4.webp",
           "title": "Smart Alerts Builder",
           "description": [
             "Your rules, your reactions",
@@ -347,7 +347,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-5.webp",
+          "image": "/images/images_features/optimization-5.webp",
           "title": "Threshold Guardian",
           "description": [
             "Safety nets for your forecasts",
@@ -364,7 +364,7 @@
       },
       "Content": [
         {
-          "image": "/images/features/prediction-0.webp",
+          "image": "/images/images_features/prediction-0.webp",
           "title": "Simple Forecast",
           "description": [
             "Quick insights, zero effort",
@@ -379,7 +379,7 @@
           ]
         },
         {
-          "image": "/images/features/prediction-1.webp",
+          "image": "/images/images_features/prediction-1.webp",
           "title": "Train Your AI",
           "description": [
             "Custom accuracy, no code needed",
@@ -394,7 +394,7 @@
           ]
         },
         {
-          "image": "/images/features/prediction-2.webp",
+          "image": "/images/images_features/prediction-2.webp",
           "title": "Assess Accuracy",
           "description": [
             "Transparency you can measure",
@@ -417,7 +417,7 @@
       },
       "Content": [
         {
-          "image": "/images/features/processing-0.webp",
+          "image": "/images/images_features/processing-0.webp",
           "title": "Interactive Dashboard",
           "description": [
             "Instant insights at your fingertips",
@@ -432,7 +432,7 @@
           ]
         },
         {
-          "image": "/images/features/processing-1.webp",
+          "image": "/images/images_features/processing-1.webp",
           "title": "Metric Visualization",
           "description": [
             "See the story behind your data",
@@ -447,7 +447,7 @@
           ]
         },
         {
-          "image": "/images/features/processing-2.webp",
+          "image": "/images/images_features/processing-2.webp",
           "title": "Seasonality Analysis",
           "description": [
             "Predict cycles, not chaos",
@@ -468,7 +468,7 @@
     "Button": "Learn more",
     "Content": [
       {
-        "image": "/images/research/Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding.webp",
+        "image": "/images/images_research/Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding.webp",
         "title": "Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding",
         "description": [
           "This paper presents a new approach to short-term electrical load forecasting, focusing on temporal encoding and minimizing the impact of weather data.",
@@ -478,7 +478,7 @@
         ]
       },
       {
-        "image": "/images/research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
+        "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
         "title": "Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series",
         "description": [
           "This paper addresses missing data in power demand time series by comparing imputation methods.",
@@ -489,7 +489,7 @@
         ]
       },
       {
-        "image": "/images/research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
+        "image": "/images/images_research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
         "title": "Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data",
         "description": [
           "Accurate short-term electrical load forecasting is crucial for efficient energy management and grid stability.",

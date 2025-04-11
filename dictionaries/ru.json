@@ -301,7 +301,7 @@
       },
       "Content": [
         {
-          "image": "/images/features/optimization-0.webp",
+          "image": "/images/images_features/optimization-0.webp",
           "title": "Простой прогноз",
           "description": [
             "Мгновенные инсайты без усилий",
@@ -310,7 +310,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-1.webp",
+          "image": "/images/images_features/optimization-1.webp",
           "title": "Глубокий анализ",
           "description": [
             "Раскройте секреты ваших данных",
@@ -319,7 +319,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-2.webp",
+          "image": "/images/images_features/optimization-2.webp",
           "title": "Обучение ИИ",
           "description": [
             "Точность под ваши нужды — без кода",
@@ -328,7 +328,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-3.webp",
+          "image": "/images/images_features/optimization-3.webp",
           "title": "Инсайты 24/7",
           "description": [
             "Прогнозы, которые ищут вас",
@@ -337,7 +337,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-4.webp",
+          "image": "/images/images_features/optimization-4.webp",
           "title": "Конструктор уведомлений",
           "description": [
             "Ваши правила — ваши действия",
@@ -346,7 +346,7 @@
           ]
         },
         {
-          "image": "/images/features/optimization-5.webp",
+          "image": "/images/images_features/optimization-5.webp",
           "title": "Контроль порогов",
           "description": [
             "Страховка для ваших прогнозов",
@@ -363,7 +363,7 @@
       },
       "Content": [
         {
-          "image": "/images/features/prediction-0.webp",
+          "image": "/images/images_features/prediction-0.webp",
           "title": "Простой прогноз",
           "description": [
             "Быстрые инсайты за пару кликов",
@@ -378,7 +378,7 @@
           ]
         },
         {
-          "image": "/images/features/prediction-1.webp",
+          "image": "/images/images_features/prediction-1.webp",
           "title": "Обучение ИИ",
           "description": [
             "Кастомизация без программирования",
@@ -393,7 +393,7 @@
           ]
         },
         {
-          "image": "/images/features/prediction-2.webp",
+          "image": "/images/images_features/prediction-2.webp",
           "title": "Оценка точности",
           "description": [
             "Измеряемая прозрачность",
@@ -416,7 +416,7 @@
       },
       "Content": [
         {
-          "image": "/images/features/processing-0.webp",
+          "image": "/images/images_features/processing-0.webp",
           "title": "Интерактивная панель",
           "description": [
             "Инсайты под рукой",
@@ -431,7 +431,7 @@
           ]
         },
         {
-          "image": "/images/features/processing-1.webp",
+          "image": "/images/images_features/processing-1.webp",
           "title": "Визуализация метрик",
           "description": [
             "История ваших данных",
@@ -446,7 +446,7 @@
           ]
         },
         {
-          "image": "/images/features/processing-2.webp",
+          "image": "/images/images_features/processing-2.webp",
           "title": "Анализ сезонности",
           "description": [
             "Предсказывайте циклы, а не хаос",
@@ -467,7 +467,7 @@
     "Button": "Узнать больше",
     "Content": [
       {
-        "image": "/images/research/Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding.webp",
+        "image": "/images/images_research/Optimizing Short-Term Electrical Load Forecasting with Bi-LSTM and Advanced Temporal Encoding.webp",
         "title": "Оптимизация краткосрочного прогнозирования нагрузки с Bi-LSTM и временным кодированием",
         "description": [
           "Новый подход к прогнозированию нагрузки с акцентом на временные признаки вместо погодных данных.",
@@ -476,7 +476,7 @@
         ]
       },
       {
-        "image": "/images/research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
+        "image": "/images/images_research/Incorporating Seasonal Features in Data Imputation Methods for Power Demand Time Series.webp",
         "title": "Методы восстановления данных с учётом сезонности",
         "description": [
           "Сравнение методов H-DIRT (историческая регрессия) и SKNN (сезонный K-ближайших соседей).",
@@ -485,7 +485,7 @@
         ]
       },
       {
-        "image": "/images/research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
+        "image": "/images/images_research/Enhancing Short-Term Load Forecasting through Machine Learning Ensemble Models and by Incorporating Weather Data.webp",
         "title": "Улучшение прогнозирования через ансамбли моделей и погодные данные",
         "description": [
           "Ансамбль Random Forest и Histogram-based Gradient Boosting для прогнозирования нагрузки.",

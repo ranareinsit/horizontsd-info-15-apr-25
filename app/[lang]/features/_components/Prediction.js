@@ -9,11 +9,9 @@ import {
     useMediaQuery, Grid, CardActions, Stack
 } from '@mui/material'
 
-// 
 import SectionHeader from "../../_components/SectionHeader"
 import Section from "../../_components/Section"
 import ScrollGrow from '../../_components/ScrollGrow';
-// 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
@@ -21,7 +19,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import '../../_components/swiper.css'
-// 
 
 function Background({ direction }) {
     const theme = useTheme();
@@ -53,7 +50,6 @@ function Background({ direction }) {
         />
     )
 }
-
 
 function Mobile() {
     const theme = useTheme();
@@ -155,7 +151,6 @@ function Desktop() {
                         padding: `2rem`
                     }}>
                         <ScrollGrow>
-
                             <Stack direction={i % 2 == 0 ? "row" : `row-reverse`} sx={{
                                 justifyContent: `space-between`,
                                 width: `100%`,
@@ -188,7 +183,6 @@ function Desktop() {
                                         width: `100%`,
                                     }} src={item.image} />
                                 </Box>
-
                                 <Box sx={{
                                     display: `flex`,
                                     flexDirection: `column`,
@@ -229,9 +223,6 @@ function Content() {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     return isMobile ? <Mobile /> : <Desktop />
 }
-
-
-
 
 export default function Prediction(props) {
     const { dict } = useI18n()
