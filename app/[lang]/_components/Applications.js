@@ -4,9 +4,10 @@ import { useColorScheme, useTheme } from '@mui/material/styles';
 import {
     Card, CardContent, CardMedia,
     Box, Container, Typography, Button, Link as MuiLink,
-    useMediaQuery, Grid, Link, Stack,
+    useMediaQuery, Grid, Stack,
     CardActions
 } from '@mui/material';
+import NextLink from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -18,6 +19,105 @@ import 'swiper/css/free-mode';
 import 'swiper/css/thumbs';
 import SectionHeader from "./SectionHeader"
 import Section from "./Section"
+
+function Mobile() {
+    const theme = useTheme();
+    const { mode } = useColorScheme();
+    const { dict } = useI18n()
+    const dictionary = dict.Home.Applications
+    return (
+        <Grid
+            container direction="column" sx={{
+                display: { xs: 'flex', sm: "flex", md: "none" },
+                width: `100%`,
+            }}
+        >
+            <Swiper
+                spaceBetween={10}
+                loop={true}
+                modules={[Pagination, Navigation]}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={{
+                    enabled: true
+                }}
+                className="swiper-slider"
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundPosition: `center`,
+                    backgroundSize: `cover`,
+                    width: `100%`,
+                    height: `80vh`,
+                    margin: `2rem 0`,
+                }}>
+                {dictionary.Content.map(({ block: item }, i) => (
+                    <SwiperSlide key={i}>
+                        <Card sx={{
+                            width: `80%`,
+                            height: `80%`,
+                            border: `1px solid ${theme.palette.primary.main}`,
+                            borderRadius: `1rem`,
+                            display: "flex",
+                            justifySelf: `center`,
+                            display: `flex`,
+                            flexDirection: `column`,
+                            justifyContent: `start`,
+                            alignItems: `center`
+                        }}>
+                            <CardContent sx={{
+                                borderRadius: `1rem`,
+                                display: `flex`,
+                                flexDirection: `column`,
+                                justifyContent: `space-between`,
+                                alignItems: `center`,
+                                height: `100%`,
+                                width: `95%`
+                            }}>
+                                <Stack direction={"column"} sx={{ justifyContent: `start`, width: `100%` }}>
+                                    <Typography variant="h6" sx={{ color: 'text.secondary' }}>
+                                        {item.title}
+                                    </Typography>
+                                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                        {item.description[0]}
+                                    </Typography>
+                                </Stack>
+
+                                <CardMedia
+                                    component="img"
+                                    image={`/images/background-${i + 1}.webp`}
+                                    sx={{
+                                        display: `flex`,
+                                        justifyContent: `center`,
+                                        alignItems: `center`,
+                                        backgroundColor: `white`,
+                                        height: `50%`,
+                                        width: `95%`
+                                    }}
+                                />
+                                <CardActions sx={{
+                                    display: `flex`,
+                                    justifyContent: `center`,
+                                    alignItems: `center`,
+                                    padding: 0,
+                                    margin: 0,
+                                    height: `20%`
+                                }}>
+                                    <NextLink href={`${item.link}`}>
+                                        <Button variant="contained">{dictionary.Button}</Button>
+                                    </NextLink>
+                                </CardActions>
+                            </CardContent>
+
+                        </Card>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </Grid>
+    )
+}
 
 function Desktop() {
     const theme = useTheme();
@@ -151,9 +251,9 @@ function Desktop() {
                                     {selected.description.map((e, i) => (<Typography key={i} gutterBottom variant="body2">{e}</Typography>))}
                                 </Stack>
                                 <Stack>
-                                    <Link href={`/features#${selectedItemIndex}`}>
+                                    <NextLink href={`${selected.link}`}>
                                         <Button variant="contained">{dictionary.Button}</Button>
-                                    </Link>
+                                    </NextLink>
                                 </Stack>
                             </Box>
                         </Box>
@@ -164,105 +264,6 @@ function Desktop() {
     );
 }
 
-function Mobile() {
-    const theme = useTheme();
-    const { mode } = useColorScheme();
-    const { dict } = useI18n()
-    const dictionary = dict.Home.Applications
-    return (
-        <Grid
-            container direction="column" sx={{
-                display: { xs: 'flex', sm: "flex", md: "none" },
-                width: `100%`,
-            }}
-        >
-            <Swiper
-                spaceBetween={10}
-                loop={true}
-                modules={[Pagination, Navigation]}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={{
-                    enabled: true
-                }}
-                className="swiper-slider"
-                style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundPosition: `center`,
-                    backgroundSize: `cover`,
-                    width: `100%`,
-                    height: `80vh`,
-                    margin: `2rem 0`,
-                }}>
-                {dictionary.Content.map(({ block: item }, i) => (
-                    <SwiperSlide key={i}>
-                        <Card sx={{
-                            width: `80%`,
-                            height: `80%`,
-                            border: `1px solid ${theme.palette.primary.main}`,
-                            borderRadius: `1rem`,
-                            display: "flex",
-                            justifySelf: `center`,
-                            display: `flex`,
-                            flexDirection: `column`,
-                            justifyContent: `start`,
-                            alignItems: `center`
-                        }}>
-                            <CardContent sx={{
-                                borderRadius: `1rem`,
-                                display: `flex`,
-                                flexDirection: `column`,
-                                justifyContent: `space-between`,
-                                alignItems: `center`,
-                                height: `100%`
-                            }}>
-                                <div>
-                                    <Typography variant="h6" sx={{ color: 'text.secondary' }}>
-                                        {item.title}
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                        {item.description[0]}
-                                    </Typography>
-                                </div>
-
-                                <CardMedia
-                                    component="img"
-                                    image={item.image}
-                                    sx={{
-                                        display: `flex`,
-                                        justifyContent: `center`,
-                                        alignItems: `center`,
-                                        filter: `invert(${mode == 'dark' ? 1 : 0})`,
-                                        backgroundColor: `white`,
-                                        height: `33%`
-                                    }}
-                                />
-                                <CardActions sx={{
-                                    display: `flex`,
-                                    justifyContent: `center`,
-                                    alignItems: `center`,
-                                    padding: 0,
-                                    margin: 0,
-                                    height: `20%`
-                                }}>
-                                    <MuiLink href={`/features#${i}`}>
-                                        <Button variant="contained" color={mode == "dark" ? "secondary" : "primary"} size="small">
-                                            {dictionary.Button}
-                                        </Button>
-                                    </MuiLink>
-                                </CardActions>
-                            </CardContent>
-
-                        </Card>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </Grid>
-    )
-}
 
 function Content() {
     const theme = useTheme();
