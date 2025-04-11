@@ -298,7 +298,7 @@ export default function Works() {
     const { dict } = useI18n()
     const content = dict.Home.Works.SectionHeader
     return (
-        <Section id="works" sx={{ backgroundImage: `url("/images/hero.webp")` }}>
+        <Section id="works">
             <SectionHeader>
                 <Typography variant="h4" gutterBottom sx={{
                     textShadow: `0px 1px 1px gray`,

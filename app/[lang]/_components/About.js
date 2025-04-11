@@ -33,13 +33,22 @@ function Content() {
             margin: `auto`,
             padding: `2rem 0`,
         }}>
-            <Grid container spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }} justifyContent="center" sx={{
-                width: { xs: `100%`, sm: `80%`, md: `60%`, lg: `50%` }
-            }}>{teamData.map((member, i) => (
-                <Grid container key={i} size={{ xs: 12, sm: 6, md: 6, lg: 4 }} spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }} justifyContent="center" sx={{
-                }}>
-
-                    <Card sx={{ maxWidth: 345 }}>
+            <Grid
+                container
+                spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
+                justifyContent="center"
+                sx={{
+                    width: { xs: `100%`, sm: `100%`, md: `80%`, lg: `80%` }
+                }}
+            >{teamData.map((member, i) => (
+                <Grid
+                    key={i}
+                    size={{ xs: 12, sm: 6, md: 6, lg: 4 }}
+                    rowSpacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
+                    spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
+                    justifyContent="center"
+                >
+                    <Card sx={{height: `100%`}}>
                         <ScrollGrow
                             animationDelay={500}
                             threshold={0.01}
