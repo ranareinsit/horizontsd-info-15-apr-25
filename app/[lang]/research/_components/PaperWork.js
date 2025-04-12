@@ -26,9 +26,54 @@ import { height, minHeight } from '@mui/system';
 import NextLink from 'next/link'
 // 
 
-function Mobile() {
+function Mobile({ content }) {
+    const theme = useTheme();
+    const { mode } = useColorScheme();
+    const isDark = mode == 'dark'
+
+    const { dict } = useI18n()
+    const buttonContent = dict?.Research.Button
+
     return (
-        <div>Mobile</div>
+        <Grid
+            container
+            sx={{
+                display: `flex`,
+                flexDirection: `column`,
+                justifyContent: `center`,
+                alignItems: `center`,
+                padding: `1rem`,
+                width: `100%`
+            }}>
+            <Box sx={{
+                position: `relative`,
+                display: `flex`,
+                justifyContent: `center`,
+                alignItems: `center`,
+                backgroundColor: `transparent`,
+                maxHeight: `45vh`,
+                width: `100%`,
+                paddingBottom: `2rem`
+            }}>
+                <img style={{
+                    maxHeight: `45vh`,
+                    width: `100%`,
+                }} src={content?.image} />
+            </Box>
+            <Stack sx={{
+                width: `100%`,
+                marginBottom: `2rem`
+            }}>
+                {content?.description.map((item, i) => {
+                    return (<Typography key={i} gutterBottom variant="body1">{item}</Typography>)
+                })}
+            </Stack>
+            <Stack>
+                <NextLink href={`#`}>
+                    <Button variant="contained">{buttonContent}</Button>
+                </NextLink>
+            </Stack>
+        </Grid >
     )
 }
 
