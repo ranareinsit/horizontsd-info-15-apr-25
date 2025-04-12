@@ -38,7 +38,7 @@ function Content() {
                 spacing={{ xs: 1, sm: 1, md: 1, lg: 1 }}
                 justifyContent="center"
                 sx={{
-                    width: { xs: `100%`, sm: `100%`, md: `80%`, lg: `80%` }
+                    width: { xs: `99%`, sm: `100%`, md: `80%`, lg: `80%` }
                 }}
             >{teamData.map((member, i) => (
                 <Grid
