@@ -1,7 +1,7 @@
 "use client"
 import { useMediaQuery } from '@mui/material'
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../i18n-context';
+import { useI18n } from '../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
@@ -28,14 +28,11 @@ import Slide from '@mui/material/Slide';
 
 import { usePathname } from 'next/navigation';
 
-const NavButton = ({ href, children, active }) => {
+const NavButton = ({ href, children }) => {
     const theme = useTheme();
     const { mode, setMode } = useColorScheme();
     const isDark = mode == 'dark'
-
-    // 
     const pathname = usePathname();
-    // console.log(pathname, href, pathname == href)
     return (
         <Link href={href}>
             <Button variant="text" sx={{
@@ -139,7 +136,7 @@ function Desktop() {
     const backgroundColor = isDark ? theme.palette.primary.dark : theme.palette.secondary.light
     const toggleMode = () => { setMode(mode === 'dark' ? 'light' : 'dark') };
     const { dict, lang } = useI18n()
-    const content = dict.Navbar
+    const content = dict?.Navbar
     return (
         <Container maxWidth="lg">
             <Toolbar disableGutters variant="dense" sx={{
@@ -153,22 +150,18 @@ function Desktop() {
             }} >
                 <Icon size='s' />
                 <Stack spacing={1} direction={"row"} justifyContent={"start"} sx={{ marginLeft: `1rem` }}>
-                    <NavButton href={`/${lang}`} active={true}>{content.home}</NavButton>
-                    <NavButton href={`/${lang}/features`} active={false}>{content.features}</NavButton>
-                    <NavButton href={`/${lang}/research`} active={false}>{content.research}</NavButton>
+                    <NavButton href={`/`} active={true}>{content.home}</NavButton>
+                    <NavButton href={`/features`} active={false}>{content.features}</NavButton>
+                    <NavButton href={`/research`} active={false}>{content.research}</NavButton>
                 </Stack>
                 <Stack spacing={1} direction={"row"} justifySelf={"end"} sx={{ width: `100%`, justifyContent: `end`, alignItems: `center` }}>
                     <LanguageSwitcher />
-                    <ThemeSwitcher
-                        checked={mode == 'dark'}
-                        onChange={toggleMode}
-                    />
+                    <ThemeSwitcher checked={mode == 'dark'} onChange={toggleMode} />
                 </Stack>
             </Toolbar>
         </Container >
     )
 }
-
 
 function HideOnScroll(props) {
     const { children } = props;
@@ -183,8 +176,6 @@ function HideOnScroll(props) {
 export default function Navbar() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    useColorScheme();
-
     return (
         <HideOnScroll >
             <AppBar

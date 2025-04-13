@@ -1,5 +1,5 @@
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../i18n-context';
+import { useI18n } from '../i18n-context';
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import {

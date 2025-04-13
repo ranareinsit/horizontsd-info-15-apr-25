@@ -1,4 +1,3 @@
-// components/Header.jsx
 "use client";
 import { useColorScheme } from '@mui/material/styles';
 import { useTheme } from '@mui/material/styles';

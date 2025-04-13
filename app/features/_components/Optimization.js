@@ -1,27 +1,22 @@
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../../i18n-context';
+import { useI18n } from '../../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
-import Divider from '@mui/material/Divider';
 import {
     Card, CardMedia, CardContent,
-    Typography, Button, Box,
-    useMediaQuery, Grid, CardActions, Stack
+    Typography, Box,
+    useMediaQuery, Grid, Stack
 } from '@mui/material'
-
-// 
 import SectionHeader from "../../_components/SectionHeader"
 import Section from "../../_components/Section"
 import ScrollGrow from '../../_components/ScrollGrow';
-// 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import '../../_components/swiper.css'
-// 
 
 function Background({ direction }) {
     const theme = useTheme();
@@ -31,7 +26,6 @@ function Background({ direction }) {
     const background = direction
         ? `linear-gradient(90deg, transparent, transparent, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark})`
         : `linear-gradient(90deg, ${isDark ? theme.palette.secondary.contrastText : theme.palette.secondary.dark}, transparent, transparent)`
-
     return (
         <Box
             sx={{
@@ -132,9 +126,6 @@ function Mobile() {
 }
 
 function Desktop() {
-    const theme = useTheme();
-    const { mode } = useColorScheme();
-    const isDark = mode == 'dark'
     const { dict } = useI18n()
     const content = dict?.Features?.Optimization?.Content
     return (

@@ -1,5 +1,5 @@
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../i18n-context';
+import { useI18n } from '../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import Divider from '@mui/material/Divider';

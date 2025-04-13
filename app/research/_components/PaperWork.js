@@ -1,35 +1,22 @@
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../../i18n-context';
+import { useI18n } from '../../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
-import Divider from '@mui/material/Divider';
 import {
-    Card, CardMedia, CardContent,
     Typography, Button, Box,
-    useMediaQuery, Grid, CardActions, Stack
+    useMediaQuery, Grid, Stack
 } from '@mui/material'
-
-// 
 import SectionHeader from "../../_components/SectionHeader"
 import Section from "../../_components/Section"
-import ScrollGrow from '../../_components/ScrollGrow';
-// 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import '../../_components/swiper.css'
-import { height, minHeight } from '@mui/system';
-// 
 import NextLink from 'next/link'
-// 
 
 function Mobile({ content }) {
-    const theme = useTheme();
     const { mode } = useColorScheme();
-    const isDark = mode == 'dark'
 
     const { dict } = useI18n()
     const buttonContent = dict?.Research.Button
@@ -78,10 +65,6 @@ function Mobile({ content }) {
 }
 
 function Desktop({ content }) {
-    const theme = useTheme();
-    const { mode } = useColorScheme();
-    const isDark = mode == 'dark'
-
     const { dict } = useI18n()
     const buttonContent = dict?.Research.Button
     return (
@@ -134,10 +117,7 @@ function Content({ content }) {
 }
 
 export default function Optimization({ item }) {
-    const { dict } = useI18n()
     const content = item.title
-    console.log(content)
-
     return (
         <Section id="optimization" sx={{
             minHeight: `auto`

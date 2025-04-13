@@ -1,19 +1,17 @@
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../../i18n-context';
+import { useI18n } from '../../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
-import Divider from '@mui/material/Divider';
 import {
     Card, CardMedia, CardContent,
-    Typography, Button, Box,
-    useMediaQuery, Grid, CardActions, Stack
+    Typography, Box,
+    useMediaQuery, Grid, Stack
 } from '@mui/material'
-
 import SectionHeader from "../../_components/SectionHeader"
 import Section from "../../_components/Section"
 import ScrollGrow from '../../_components/ScrollGrow';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -224,7 +222,7 @@ function Content() {
     return isMobile ? <Mobile /> : <Desktop />
 }
 
-export default function Prediction(props) {
+export default function Prediction() {
     const { dict } = useI18n()
     const content = dict?.Features?.Prediction?.SectionHeader
     return (

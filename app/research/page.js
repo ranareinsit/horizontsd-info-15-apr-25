@@ -10,7 +10,7 @@ import CallToAction from "../_components/CallToAction"
 import Footer from "../_components/Footer"
 import ScrollTop from "../_components/ScrollTop"
 import PaperWork from './_components/PaperWork';
-import { useI18n } from '../../i18n-context';
+import { useI18n } from '../i18n-context';
 
 function PageContent() {
   const { dict } = useI18n()

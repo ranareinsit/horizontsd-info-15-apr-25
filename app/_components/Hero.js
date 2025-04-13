@@ -1,11 +1,11 @@
 import { useColorScheme } from '@mui/material/styles';
-import { useI18n } from '../../i18n-context';
+import { useI18n } from '../i18n-context';
 import { useTheme } from '@mui/material/styles';
 import * as React from 'react';
 import { useState, useCallback } from 'react';
 import Stack from '@mui/material/Stack';
 import { Container, Typography, useMediaQuery } from '@mui/material'
-import { bebasNeue } from "../../../fonts"
+import { bebasNeue } from "../../fonts"
 import Section from "./Section"
 import { Parallax, useParallax } from "react-scroll-parallax";
 

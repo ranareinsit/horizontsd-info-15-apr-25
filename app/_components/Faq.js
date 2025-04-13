@@ -1,4 +1,4 @@
-import { useI18n } from '../../i18n-context';
+import { useI18n } from '../i18n-context';
 import * as React from 'react';
 import {
     Box, Container, Typography

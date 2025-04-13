@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useI18n } from '../../i18n-context';
+import { useI18n } from '../i18n-context';
 import { useColorScheme, useTheme } from '@mui/material/styles';
 import {
     Card, CardContent, CardMedia,
