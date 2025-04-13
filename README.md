@@ -7,9 +7,16 @@
 
 <br>
 
-<br>
+
+<img src="./_design/ColorPalette.png"  height="600">
 
 <br>
+
+<img src="./_loadtest/test.jpg"  height="400">
+
+<br>
+
+<img src="./_loadtest/test2.jpg"  height="400">
 
 <br>
 

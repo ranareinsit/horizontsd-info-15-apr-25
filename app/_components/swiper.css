@@ -1,0 +1,44 @@
+.swiper-slider .swiper-button-next {
+  color: var(--mui-palette-primary-main);
+}
+
+.swiper-slider .swiper-button-prev {
+  color: var(--mui-palette-primary-main);
+}
+
+.swiper-slider .swiper-pagination-bullet-active {
+  background: var(--mui-palette-primary-main);
+}
+
+.swiper-slide {
+  display: inline-grid;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--mui-palette-secondary-dark);
+}
+
+:root {
+  --swiper-pagination-bottom: -0.1%;
+}
+
+.swiper-wrapper {
+  height: 98%;
+}
+
+/*  */
+.swiper-slide {
+  opacity: 0.0;
+}
+
+.swiper-slide-visible {
+  opacity: 0.9;
+}
+
+.swiper-slide-fully-visible {
+  opacity: 1;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
