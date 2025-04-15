@@ -510,8 +510,8 @@
       "education": "PhD in Technology for Health",
       "job_title": "Co-founder / Lead",
       "contacts": {
-        "telegram": "@dvasenin",
-        "orcid": "https://orcid.org/0000-0002-7028-9984",
+        "telegram": "dvasenin",
+        "orcid": "0000-0002-7028-9984",
         "email": "vasenindmitrij01@gmail.com"
       },
       "photo": "/images/team/Dmitrii_Vasenin.png"
@@ -522,9 +522,9 @@
       "education": "PhD Student. Major – Systems Analysis, Information Management and Processing, Statistics",
       "job_title": "Co-founder / Technical Lead",
       "contacts": {
-        "telegram": "@SavvinNikita",
+        "telegram": "SavvinNikita",
         "email": "savvin.nikita.work@yandex.ru",
-        "orcid": "https://orcid.org/0009-0009-9163-6234"
+        "orcid": "0009-0009-9163-6234"
       },
       "photo": "/images/team/Savvin_Nikita.png"
     },
@@ -534,9 +534,9 @@
       "education": "Information systems and technologies",
       "job_title": "Data Scientist",
       "contacts": {
-        "telegram": "@aashakhova",
+        "telegram": "aashakhova",
         "email": "anastasia.shakhova1@gmail.com",
-        "orcid": "https://orcid.org/0009-0007-8392-3634"
+        "orcid": "0009-0007-8392-3634"
       },
       "photo": "/images/team/Anastasia_Shahova.png"
     },
@@ -546,7 +546,7 @@
       "education": "Information Systems and Programming, Web and Multimedia Applications Developer.",
       "job_title": "Frontend Developer\n",
       "contacts": {
-        "telegram": "@dostanmenyatyt",
+        "telegram": "dostanmenyatyt",
         "email": "ilyailyaselivanov@gmail.com"
       },
       "photo": "/images/team/Ilya_Selivanov.png"
