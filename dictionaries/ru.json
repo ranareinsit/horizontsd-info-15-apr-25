@@ -539,18 +539,18 @@
       "job_title": "Frontend-разработчик",
       "contacts": {
         "telegram": "@dostanmenyatyt",
-        "email": "ilyailyaselivanov@gmail.com\n",
-        "photo": "/images/team/Ilya_Selivanov.png"
-      }
+        "email": "ilyailyaselivanov@gmail.com\n"
+      },
+      "photo": "/images/team/Ilya_Selivanov.png"
     },
     {
       "first_name": "Андрей",
-      "last_name": "...............",
+      "last_name": " ",
       "job_title": "Ведущий Frontend-разработчик",
       "contacts": {
-        "telegram": "...............",
-        "orcid": "...............",
-        "email": "..............."
+        "telegram": " ",
+        "orcid": " ",
+        "email": " "
       },
       "photo": "/images/team/Andrey.png"
     }
