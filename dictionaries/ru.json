@@ -497,61 +497,62 @@
   },
   "Team": [
     {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
+      "first_name": "Дмитрий",
+      "last_name": "Васенин",
+      "education": "PhD. Специальность - Технологии для здоровья",
+      "job_title": "Сооснователь / руководитель",
       "contacts": {
-        "telegram": "...............",
-        "orcid": "...............",
-        "email": "..............."
+        "telegram": "@dvasenin",
+        "orcid": "https://orcid.org/0000-0002-7028-9984",
+        "email": "vasenindmitrij01@gmail.com"
       },
-      "photo": "/images/team.webp"
+      "photo": "/images/team/Dmitrii_Vasenin.png"
     },
     {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
+      "first_name": "Никита",
+      "last_name": "Саввин",
+      "education": "Аспирант. Специальность -Системный анализ,\n управление и обработка информации,\n статистика",
+      "job_title": "Сооснователь / Технический руководитель",
       "contacts": {
-        "telegram": "...............",
-        "email": "...............",
-        "orcid": "..............."
+        "telegram": "@SavvinNikita",
+        "email": "savvin.nikita.work@yandex.ru\n",
+        "orcid": "https://orcid.org/0009-0009-9163-6234"
       },
-      "photo": "/images/team.webp"
+      "photo": "/images/team/Savvin_Nikita.png"
     },
     {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
+      "first_name": "Анастасия",
+      "last_name": "Шахова",
+      "education": "Информационные системы и технологии",
+      "job_title": "Data Scientist",
       "contacts": {
-        "telegram": "...............",
-        "email": "...............",
-        "orcid": "..............."
+        "telegram": "@aashakhova",
+        "email": "anastasia.shakhova1@gmail.com",
+        "orcid": "https://orcid.org/0009-0007-8392-3634"
       },
-      "photo": "/images/team.webp"
+      "photo": "/images/team/Anastasia_Shahova.png"
     },
     {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
+      "first_name": "Илья",
+      "last_name": "Селиванов",
+      "education": "Информационные системы и программирование, разработчик веб и мультимедийных приложений.",
+      "job_title": "Frontend-разработчик",
       "contacts": {
-        "telegram": "...............",
-        "email": "..............."
+        "telegram": "@dostanmenyatyt",
+        "email": "ilyailyaselivanov@gmail.com\n",
+        "photo": "/images/team/Ilya_Selivanov.png"
       }
     },
     {
-      "first_name": "...............",
+      "first_name": "Андрей",
       "last_name": "...............",
-      "job_title": "...............",
+      "job_title": "Ведущий Frontend-разработчик",
       "contacts": {
         "telegram": "...............",
         "orcid": "...............",
         "email": "..............."
       },
-      "photo": "/images/team.webp"
+      "photo": "/images/team/Andrey.png"
     }
   ],
   "Footer": {
