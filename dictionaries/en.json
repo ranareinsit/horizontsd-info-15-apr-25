@@ -529,6 +529,17 @@
       "photo": "/images/team/Savvin_Nikita.png"
     },
     {
+      "first_name": "Andrey",
+      "last_name": " ",
+      "job_title": "Lead Frontend Developer\n",
+      "contacts": {
+        "telegram": "...............",
+        "orcid": "...............",
+        "email": "..............."
+      },
+      "photo": "/images/team/Andrey.png"
+    },
+    {
       "first_name": "Anastasiia",
       "last_name": "Shakhova",
       "education": "Information systems and technologies",
@@ -550,17 +561,6 @@
         "email": "ilyailyaselivanov@gmail.com"
       },
       "photo": "/images/team/Ilya_Selivanov.png"
-    },
-    {
-      "first_name": "Andrey",
-      "last_name": " ",
-      "job_title": "Lead Frontend Developer\n",
-      "contacts": {
-        "telegram": "...............",
-        "orcid": "...............",
-        "email": "..............."
-      },
-      "photo": "/images/team/Andrey.png"
     }
   ],
   "Footer": {
