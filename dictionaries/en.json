@@ -505,61 +505,62 @@
   },
   "Team": [
     {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
+      "first_name": "Dmitrii",
+      "last_name": "Vasenin",
+      "education": "PhD in Technology for Health",
+      "job_title": "Co-founder / Lead",
+      "contacts": {
+        "telegram": "dvasenin",
+        "orcid": "0000-0002-7028-9984",
+        "email": "vasenindmitrij01@gmail.com"
+      },
+      "photo": "/images/team/Dmitrii_Vasenin.png"
+    },
+    {
+      "first_name": "Nikita",
+      "last_name": "Savvin",
+      "education": "PhD Student. Major – Systems Analysis, Information Management and Processing, Statistics",
+      "job_title": "Co-founder / Technical Lead",
+      "contacts": {
+        "telegram": "SavvinNikita",
+        "email": "savvin.nikita.work@yandex.ru",
+        "orcid": "0009-0009-9163-6234"
+      },
+      "photo": "/images/team/Savvin_Nikita.png"
+    },
+    {
+      "first_name": "Andrey",
+      "last_name": " ",
+      "job_title": "Lead Frontend Developer\n",
       "contacts": {
         "telegram": "...............",
         "orcid": "...............",
         "email": "..............."
       },
-      "photo": "/images/team.webp"
+      "photo": "/images/team/Andrey.png"
     },
     {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
+      "first_name": "Anastasiia",
+      "last_name": "Shakhova",
+      "education": "Information systems and technologies",
+      "job_title": "Data Scientist",
       "contacts": {
-        "telegram": "...............",
-        "email": "...............",
-        "orcid": "..............."
+        "telegram": "aashakhova",
+        "email": "anastasia.shakhova1@gmail.com",
+        "orcid": "0009-0007-8392-3634"
       },
-      "photo": "/images/team.webp"
+      "photo": "/images/team/Anastasia_Shahova.png"
     },
     {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
+      "first_name": "Ilya",
+      "last_name": "Selivanov",
+      "education": "Information Systems and Programming, Web and Multimedia Applications Developer.",
+      "job_title": "Frontend Developer\n",
       "contacts": {
-        "telegram": "...............",
-        "email": "...............",
-        "orcid": "..............."
+        "telegram": "dostanmenyatyt",
+        "email": "ilyailyaselivanov@gmail.com"
       },
-      "photo": "/images/team.webp"
-    },
-    {
-      "first_name": "...............",
-      "last_name": "...............",
-      "education": "...............",
-      "job_title": "...............",
-      "contacts": {
-        "telegram": "...............",
-        "email": "..............."
-      }
-    },
-    {
-      "first_name": "...............",
-      "last_name": "...............",
-      "job_title": "...............",
-      "contacts": {
-        "telegram": "...............",
-        "orcid": "...............",
-        "email": "..............."
-      },
-      "photo": "/images/team.webp"
+      "photo": "/images/team/Ilya_Selivanov.png"
     }
   ],
   "Footer": {
