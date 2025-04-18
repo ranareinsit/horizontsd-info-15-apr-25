@@ -1,0 +1,97 @@
+@property --card-bg {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #357ac9;
+}
+
+@property --shine-1 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #447da7;
+}
+
+@property --shine-2 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #9dd6ff;
+}
+
+.section-header {
+	background: radial-gradient(300px circle at 55% 60% in oklab,
+			var(--shine-2), transparent 100% 100%), radial-gradient(farthest-side circle at 75% 30% in oklab,
+			var(--shine-1) 0%, var(--card-bg) 100%);
+	background-blend-mode: color-burn;
+	animation: animate-color-1 8s infinite linear alternate, 4s animate-color-2 1s infinite linear alternate;
+}
+
+
+@keyframes animate-color-1 {
+	from {
+		--shine-1: initial;
+	}
+
+	to {
+		--shine-1: #0088ff;
+	}
+}
+
+@keyframes animate-color-2 {
+	from {
+		--shine-2: initial;
+	}
+
+	to {
+		--shine-2: #89c8ff;
+	}
+}
+
+
+
+/* About */
+
+@property --card2-bg {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #8394c0a8;
+}
+
+@property --shine2-1 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #9ac6cc;
+}
+
+@property --shine2-2 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: #ffffff;
+}
+
+
+@keyframes animate2-color-1 {
+	from {
+		--shine2-1: initial;
+	}
+
+	to {
+		--shine2-1: #00000000;
+	}
+}
+
+@keyframes animate2-color-2 {
+	from {
+		--shine2-2: initial;
+	}
+
+	to {
+		--shine2-2: #00000000;
+	}
+}
+
+.card-background {
+	background:
+		radial-gradient(300px circle at 30% 30% in oklab, var(--shine2-2), transparent 100% 100%),
+		radial-gradient(farthest-side circle at 50% 50% in oklab, var(--shine2-1) 0%, var(--card2-bg) 100%);
+	background-blend-mode: color-burn;
+	animation: animate2-color-1 30s infinite linear alternate, 40s animate2-color-2 50s infinite linear alternate;
+}

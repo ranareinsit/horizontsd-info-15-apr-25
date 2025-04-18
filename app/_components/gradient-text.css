@@ -1,0 +1,25 @@
+@property --＠color-1 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(0, 0%, 100%);
+}
+
+@property --＠color-2 {
+	syntax: "<color>";
+	inherits: false;
+	initial-value: hsl(204, 83%, 72%);
+}
+
+@keyframes gradient-change {
+	to {
+		--＠color-1: hsl(210, 100%, 78%);
+		--＠color-2: hsl(209, 100%, 75%);
+	}
+}
+
+.gradient-text {
+	background: linear-gradient(to right in oklch, var(--＠color-1), var(--＠color-2));
+	background-clip: text;
+	color: transparent;
+	animation: gradient-change 2s linear infinite alternate;
+}
